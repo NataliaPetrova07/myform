@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header></header>
+    <main id="main">
+      <section>
+        <form id="form1">
+          <div class="form_group">
+            <label for="name">Name<span class="hint">Enter the shows name</span></label>
+            <input type="text" name="name" id="name" required />
+          </div>
+          <div class="form_group">
+            <label for="seasons">Seasons<span class="hint">Enter number of seasons</span></label>
+            <div class="input-group">
+              <input type="number" id="seasons" pattern="[0-9]" name="seasons" inputmode="numeric" maxlength="3" required />
+            </div>
+          </div>
+          <div class="form_group">
+            <label for="director"
+              >Director
+              <span class="hint">Who directed it?</span>
+            </label>
+            <input type="text" list="director-names" id="director" name="director" required />
+            <datalist id="director-names">
+              <option value="Martin Scorcese"></option>
+              <option value="John Woo"></option>
+              <option value="Quentin Tarantino"></option>
+              <option value="Steven Spielberg"></option>
+              <option value="Alfred Hitchcock"></option>
+              <option value="Christopher Nolan"></option>
+              <option value="James Cameron"></option>
+              <option value="James Francis Coppola"></option>
+              <option value="Guy Ritchie"></option>
+              <option value="David Fincher"></option>
+              <option value="George Lucas"></option>
+            </datalist>
+          </div>
+          <fieldset class="form_group">
+            <legend>Ongoing?</legend>
+            <span class="hint">Is the show still being recorded?</span>
+            <ul role="list" class="controls">
+              <li>
+                <label for="yes">
+                  <input id="yes" type="radio" name="ongoing" value="yes" />
+                  Yes
+                </label>
+              </li>
+              <li>
+                <label for="no">
+                  <input id="no" type="radio" name="ongoing" value="no" checked />
+                  No
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <div class="form_group range">
+            <label for="rating">Rating</label>
+            <div class="range-wrap">
+              <input type="range" step=".1" min="0" max="5" value="2.5" id="rating" name="rating" onChange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)" </input>
+              <span id="rangeValue">2.5</span>
+             <script type="text/javascript">
+                function rangeSlide(value) {
+                  document.querySelector("#rangeValue").innerHTML = value;
+                }
+              </script>
+            </div>
+          </div>
+          <fieldset class="form_group genres_group">
+            <legend>Genres</legend>
+            <span class="hint">Choose genres</span>
+            <ul role="list" class="controls">
+              <li>
+                <label for="action">
+                  <input id="action" type="checkbox" name="genres" value="action" />
+                  Action
+                </label>
+              </li>
+              <li>
+                <label for="animation">
+                  <input id="animation" type="checkbox" name="genres" value="animation" />
+                  Animation
+                </label>
+              </li>
+              <li>
+                <label for="comedy">
+                  <input id="comedy" type="checkbox" name="genres" value="comedy" />
+                  Comedy
+                </label>
+              </li>
+              <li>
+                <label for="crime">
+                  <input id="crime" type="checkbox" name="genres" value="crime" />
+                  Crime
+                </label>
+              </li>
+              <li>
+                <label for="drama">
+                  <input id="drama" type="checkbox" name="genres" value="drama" />
+                  Drama
+                </label>
+              </li>
+              <li>
+                <label for="experimental">
+                  <input id="experimental" type="checkbox" name="genres" value="experimental" />
+                  Experimental
+                </label>
+              </li>
+              <li>
+                <label for="fantasy">
+                  <input id="fantasy" type="checkbox" name="genres" value="fantasy" />
+                  Fantasy
+                </label>
+              </li>
+              <li>
+                <label for="historical">
+                  <input id="historical" type="checkbox" name="genres" value="historical" />
+                  Historical
+                </label>
+              </li>
+              <li>
+                <label for="horror">
+                  <input id="horror" type="checkbox" name="genres" value="horror" />
+                  Horror
+                </label>
+              </li>
+              <li>
+                <label for="romance">
+                  <input id="romance" type="checkbox" name="genres" value="romance" />
+                  Romance
+                </label>
+              </li>
+              <li>
+                <label for="sci-fi">
+                  <input id="sci-fi" type="checkbox" name="genres" value="sci-fi" />
+                  Sci-fi
+                </label>
+              </li>
+              <li>
+                <label for="thriller">
+                  <input id="thriller" type="checkbox" name="genres" value="thriller" />
+                  Thriller
+                </label>
+              </li>
+              <li>
+                <label for="western">
+                  <input id="western" type="checkbox" name="genres" value="western" />
+                  Western
+                </label>
+              </li>
+              <li>
+                <label for="other">
+                  Other
+                  <span class="hint">Enter one genre per line</span>
+                </label>
+                <textarea name="genres" id="genres"></textarea>
+              </li>
+            </ul>
+          </fieldset>
+          <button type="submit" form="form1" value="Submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
